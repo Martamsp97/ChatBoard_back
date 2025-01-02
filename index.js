@@ -39,7 +39,7 @@ io.on('connection', async (socket) => {
         io.emit('chatmsg_server', data);
     })
     //Recupero los 5 ultimos mensahes
-    const Fivemsg = await ChatMessage.find().sort('-createdAt').limit(5);
+    const Fivemsg = await ChatMessage.find().sort('-createdAt').limit(2);
     //Emito el evento chat_init
     socket.emit('chat_init', {
         socket_id: socket.id,
